@@ -1,0 +1,7 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme",
+    "gitlens.hovers.currentLine.over": "line",
+    "editor.fontLigatures": null,
+    "editor.formatOnPaste": true,
+}

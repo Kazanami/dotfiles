@@ -3,6 +3,7 @@
 _ln() {(
     if [ -L "$2" ];then
         info "ReLinking $2"
+        unlink "$2"
     fi
     info "Linking $1 -> $2 ..."
     ln -s "$1" "$2"
