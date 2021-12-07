@@ -23,6 +23,6 @@ _mkdir() {(
 
 _remove_linklist_comment() {(
     sed -e 's/\s*#.*//' \
-        -e '/^\s*$/d'\
+        -e '/^\s*$/d' \
         $1
 )}
