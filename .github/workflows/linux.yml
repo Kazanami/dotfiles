@@ -21,5 +21,4 @@ jobs:
       
       - name: Load .bashrc
         run: |
-          bash ~/.bashrc 2> error.log; cat error.log
-          if [ -s error.log ]; then false; fi
+          bash ~/.bashrc
