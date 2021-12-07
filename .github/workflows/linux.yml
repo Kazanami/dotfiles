@@ -2,7 +2,7 @@ name: Test Run
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   ubuntu-test:
