@@ -10,8 +10,8 @@ jobs:
     steps:
         - name: Setup Env
           run: |
-            apt-get update
-            apt-get install -y curl tar gzip xzip
+            sudo apt-get update
+            sudo apt-get install -y curl tar gzip xzip
         
         - name: Run Online Launch script
           run: |
@@ -25,8 +25,8 @@ jobs:
     steps:
         - name: Setup Env
           run: |
-            apt-get update
-            apt-get install -y curl tar gzip xzip
+            sudo apt-get update
+            sudo apt-get install -y curl tar gzip xzip
         
         - name: Download Launch script
           run: |
