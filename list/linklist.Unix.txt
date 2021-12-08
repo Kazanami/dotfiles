@@ -2,6 +2,7 @@
 bash/bashrc ${HOME}/.bashrc
 bash/profile ${HOME}/.profile
 bash/bash_aliases.d ${HOME}/.bash_aliases.d
+bash/bash_modules.d ${HOME}/.bash_modules.d
 bash/bash_aliases ${HOME}/.bash_aliases
 
 # nvim
