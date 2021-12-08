@@ -10,6 +10,8 @@ jobs:
     steps:
         - name: Setup Env
           run: |
+            mv ~/.bashrc ~/.bashrc.org
+            mv ~/.profile ~/.profile.org
             sudo apt-get update
             sudo apt-get install -y curl tar gzip xzip
         
@@ -19,13 +21,16 @@ jobs:
             bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
         - name: Check linker
           run: |
-            bash dotfiles/bin/check.sh
+            cd ${HOME}
+            bash -c dotfiles/bin/check.sh
   
   download-install:
     runs-on: ubuntu-latest
     steps:
         - name: Setup Env
           run: |
+            mv ~/.bashrc ~/.bashrc.org
+            mv ~/.profile ~/.profile.org
             sudo apt-get update
             sudo apt-get install -y curl tar gzip xzip
         
@@ -35,10 +40,12 @@ jobs:
             curl -o launch.sh https://kazanami.github.io/dotfiles/launch.sh
         - name: Run Launch script
           run: |
+            cd ${HOME}
             bash -c launch.sh
         - name: Check linker
           run: |
-            bash dotfiles/bin/check.sh
+            cd ${HOME}
+            bash -c dotfiles/bin/check.sh
   
   offline-install:
     runs-on: ubuntu-latest
