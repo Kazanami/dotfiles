@@ -9,7 +9,7 @@ bash -c "
     cd $(pwd)/dotfiles
     bash bin/link.sh
     cd ${HOME}
-    rm dotfiles-latest.tar.gz
-    rm launch.sh
+    rm $(pwd}/dotfiles-latest.tar.gz
+    rm $(pwd}/launch.sh
     echo 'installed. Have fun!!'
 "
