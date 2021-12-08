@@ -14,7 +14,7 @@ for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(unam
     [ ! -r "${linklist}" ] && continue
     _remove_linklist_comment "$linklist"
     _remove_linklist_comment "$linklist" | while read target link; do
-        echo "${target} ${link}"
+ #       echo "${target} ${link}"
         target=$(eval echo "${dotfiles_root}/${target}")
         link=$(eval echo "${link}")
         _mkdir $(dirname ${link})
