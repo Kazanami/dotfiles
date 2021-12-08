@@ -5,7 +5,40 @@ on:
     branches: [ main ]
 
 jobs:
-  ubuntu-test:
+  online-install:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup Env
+          run: |
+            apt-get update
+            apt-get install curl tar gzip xzip
+        
+        - name: Run Online Launch script
+          run: |
+            bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
+        - name: Check linker
+          run: |
+            bash dotfiles/bin/check.sh
+  
+  download-install:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup Env
+          run: |
+            apt-get update
+            apt-get install curl tar gzip xzip
+        
+        - name: Download Launch script
+          run: |
+            curl -o launch.sh https://kazanami.github.io/dotfiles/launch.sh
+        - name: Run Launch script
+          run: |
+            bash -c launch.sh
+        - name: Check linker
+          run: |
+            bash dotfiles/bin/check.sh
+  
+  offline-install:
     runs-on: ubuntu-latest
     
     steps:
