@@ -11,7 +11,7 @@ jobs:
         - name: Setup Env
           run: |
             apt-get update
-            apt-get install curl tar gzip xzip
+            apt-get install -y curl tar gzip xzip
         
         - name: Run Online Launch script
           run: |
@@ -26,7 +26,7 @@ jobs:
         - name: Setup Env
           run: |
             apt-get update
-            apt-get install curl tar gzip xzip
+            apt-get install -y curl tar gzip xzip
         
         - name: Download Launch script
           run: |
