@@ -15,6 +15,7 @@ jobs:
         
         - name: Run Online Launch script
           run: |
+            cd ${HOME}
             bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
         - name: Check linker
           run: |
@@ -30,6 +31,7 @@ jobs:
         
         - name: Download Launch script
           run: |
+            cd ${HOME}
             curl -o launch.sh https://kazanami.github.io/dotfiles/launch.sh
         - name: Run Launch script
           run: |
