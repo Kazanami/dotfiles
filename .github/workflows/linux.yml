@@ -22,7 +22,7 @@ jobs:
         - name: Check linker
           run: |
             cd ${HOME}
-            bash -c dotfiles/bin/check.sh
+            bash dotfiles/bin/check.sh
   
   download-install:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
         - name: Check linker
           run: |
             cd ${HOME}
-            bash -c dotfiles/bin/check.sh
+            bash dotfiles/bin/check.sh
   
   offline-install:
     runs-on: ubuntu-latest
