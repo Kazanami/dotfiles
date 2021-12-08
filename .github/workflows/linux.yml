@@ -19,6 +19,7 @@ jobs:
       - name: Run link.sh
         run: bash ${GITHUB_WORKSPACE}/bin/link.sh
       
-      - name: Load .bashrc
+      - name: Linked Checker
         run: |
-          bash ~/.bashrc
+          bash ${GITHUB_WORKSPACE}/bin/check.sh
+      

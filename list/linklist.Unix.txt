@@ -3,4 +3,4 @@ bash/bashrc ${HOME}/.bashrc
 bash/profile ${HOME}/.profile
 
 # nvim
-nvim/init.vim   ${HOME}/.config/nvim/init.vim
+nvim ${HOME}/.config/nvim
