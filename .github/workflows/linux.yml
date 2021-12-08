@@ -41,7 +41,7 @@ jobs:
         - name: Run Launch script
           run: |
             cd ${HOME}
-            bash -c launch.sh
+            bash launch.sh
         - name: Check linker
           run: |
             cd ${HOME}
