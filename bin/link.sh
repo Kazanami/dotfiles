@@ -21,3 +21,6 @@ for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(unam
         _ln ${target} ${link}
     done
 done
+
+info "Please reload .bashrc"
+info "$ source ~/.bashrc"
