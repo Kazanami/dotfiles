@@ -1,0 +1,35 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+color_propmt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if [ -d ${HOME}/.bash_modules.d ];then
+    for f in $(ls -1 ${HOME}/.bash_modules.d/*.module);do
+        source $f
+    done
+fi
+
+#if [ "$color_prompt" = yes ]; then
+    PS1='$(face_input)'" \w ${OS}/$(get_arch) $(username_host)"'$(git_info)'" \$ "
+#else
+#    PS1='[\u@\h:\w]\$ '
+#fi
