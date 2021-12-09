@@ -35,10 +35,4 @@ function git_info() {
   echo -e "${end} on ${purple}${branch}${dirty}${end}"
 }
 
-if [ "$color_prompt" = yes ]; then
-    PS1='$(face_input)'" \w ${OS} $(username_host)/$(get_arch)"'$(git_info)'" \$ "
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-
-unset color_prompt force_color_prompt
+export PROMPT_DIRTRIM=2

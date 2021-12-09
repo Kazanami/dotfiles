@@ -125,24 +125,12 @@ if [ -d ${HOME}/.bash_modules.d ];then
 fi
 
 #export TERM=xterm
-
-export GOROOT=$HOME/.local/go
-export GOPATH=$HOME/.local/gobin
-
-export PATH=$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.nodebrew/current/bin:$PATH
 COMPOSE_DOCKER_CLI_BUILD=1
-function share_history {
-  # 最後に実行したコマンドを履歴ファイルに追記
-  history -a
-  # メモリ上のコマンド履歴を消去
-  history -c
-  # 履歴ファイルからメモリへコマンド履歴を読み込む
-  history -r
-}
-# 上記の一連の処理を、プロンプト表示前に（＝何かコマンドを実行することに）実行する
-PROMPT_COMMAND='share_history'
-# bashのプロセスを終了する時に、メモリ上の履歴を履歴ファイルに追記する、という動作を停止する
-# （history -aによって代替されるため）
-shopt -u histappend
 
-export PROMPT_DIRTRIM=2
+if [ "$color_prompt" = yes ]; then
+    PS1='$(face_input)'" \w ${OS} $(username_host)/$(get_arch)"'$(git_info)'" \$ "
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+unset color_prompt force_color_prompt
