@@ -29,7 +29,7 @@ if [ -d ${HOME}/.bash_modules.d ];then
 fi
 
 #if [ "$color_prompt" = yes ]; then
-    PS1='$(face_input)'" ${OS}:$(get_arch) $(username_host) in ${greenb}\w${end}"'$(git_info)'" \$ "
+    PS1='\[$(face_input)\]'" ${OS}:\[$(get_arch)\] \[$(username_host)\] in ${greenb}\w${end}"'\[$(git_info)\]'" \$ "
 #else
 #    PS1='[\u@\h:\w]\$ '
 #fi
