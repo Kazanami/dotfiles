@@ -6,6 +6,6 @@ COPY lib/ /root/dotfiles/lib/
 COPY bin/ /root/dotfiles/bin/ 
 COPY list/ /root/dotfiles/list/
 COPY nvim/ /root/dotfiles/nvim/
-RUN mv /root/.bashrc /root/dotfiles/bash/bashrc && \
-    mv /root/.profile /root/dotfiles/bash/profile
+RUN mv /root/.bashrc /root/.bashrc.org && \
+    mv /root/.profile /root/.profile.org
     
