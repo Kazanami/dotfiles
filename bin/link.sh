@@ -8,15 +8,17 @@ dot_ascii='
  __| |___| |_ / _(_) |___ ___
 / _` / _ \  _|  _| | / -_|_-<
 \__,_\___/\__|_| |_|_\___/__/
-                             '
+                             
+                             installer!'
 
 # Linrary load
 LIB_BASE="${dotfiles_root}/lib"
 source ${LIB_BASE}/logger.sh
 source ${LIB_BASE}/common.sh
 
+echo "Welcome to Kazanami's"
 echo "${dot_ascii}"
-echo "Welcome to Kazanami's dotfiles installer"
+#echo "Welcome to Kazanami's dotfiles installer"
 
 # Main
 for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(uname).txt"; do

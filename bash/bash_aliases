@@ -1,5 +1,5 @@
 if [ -d ${HOME}/.bash_aliases.d ];then
-    for f in $(ls -1 ${HOME}/.bash_aliases.d/*.aliases);do
+    for f in $(ls -1 ${HOME}/.bash_aliases.d/*.alias);do
         source $f
     done
 fi
