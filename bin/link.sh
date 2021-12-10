@@ -14,7 +14,17 @@ dot_ascii='
 # Linrary load
 LIB_BASE="${dotfiles_root}/lib"
 source ${LIB_BASE}/logger.sh
-source ${LIB_BASE}/common.sh
+debug "DOT_DEBUG is True"
+debug "Loading Library..."
+for lib_data in `ls -1 ${LIB_BASE}/*.sh`; do
+    [[ "$ilb_data" != "${LIB_BASE}/logger.sh" ]] && source ${lib_data}; debug "Loaded Library: ${lib_data}"
+done
+
+debug "Getting OS Infomation..."
+debug "OS Version: ${NAME} ${VERSION}"
+debug "Kernel Version: $(uname -rv)"
+debug "bash Version: ${BASH_VERSION}"
+debug "End OS Infomation"
 
 echo "Welcome to Kazanami's"
 echo "${dot_ascii}"
@@ -22,6 +32,7 @@ echo "${dot_ascii}"
 
 # Main
 for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(uname).txt"; do
+    debug "Loading Link list: ${linklist}"
     [ ! -r "${linklist}" ] && continue
     _remove_linklist_comment "$linklist" | while read target link; do
  #       echo "${target} ${link}"

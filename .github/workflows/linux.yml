@@ -18,7 +18,7 @@ jobs:
         - name: Run Online Launch script
           run: |
             cd ${HOME}
-            bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
+            DOT_DEBUG="true" bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
         - name: Check linker
           run: |
             cd ${HOME}
@@ -41,7 +41,7 @@ jobs:
         - name: Run Launch script
           run: |
             cd ${HOME}
-            bash launch.sh
+            DOT_DEBUG="true" bash launch.sh
         - name: Check linker
           run: |
             cd ${HOME}
@@ -59,7 +59,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run link.sh
-        run: bash ${GITHUB_WORKSPACE}/bin/link.sh
+        run: |
+          DOT_DEBUG="true" bash ${GITHUB_WORKSPACE}/bin/link.sh
       
       - name: Linked Checker
         run: |

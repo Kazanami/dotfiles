@@ -37,3 +37,10 @@ warn() {
 error() {
     echo -e "$(base) [${red}ERROR${end}] $1"
 }
+
+debug(){
+    if [ -z "$DOT_DEBUG" ];then
+        return 1
+    fi
+    echo -e "$(base) [${lightblue}DEBUG${end}] $1"
+}
