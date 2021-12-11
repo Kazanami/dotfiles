@@ -10,3 +10,6 @@ nvim ${HOME}/.config/nvim
 
 # vim(vi)
 vim/vimrc ${HOME}/.vimrc
+
+# tmux
+tmux/tmux.conf ${HOME}/.tmux.conf
