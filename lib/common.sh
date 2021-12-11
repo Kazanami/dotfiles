@@ -10,7 +10,7 @@ _ln() {(
         unlink "$2"
     fi
     info "Linking $1 -> $2 ..."
-    ln -s "$1" "$2"
+    ln -fs "$1" "$2"
 )}
 
 _unlink() {(
