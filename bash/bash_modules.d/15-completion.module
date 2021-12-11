@@ -1,0 +1,9 @@
+
+BASH_COMP="${HOME}/.bash_completion.d"
+
+if [ -d "${HOME}/.bash_completion.d" ];then
+  for f in `ls -1 ${HOME}/.bash_completion.d`;do
+    target=$(eval echo "${BASH_COMP}/${f}")
+    . ${target}
+  done
+fi

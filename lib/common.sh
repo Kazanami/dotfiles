@@ -1,7 +1,11 @@
 #!/bin/bash
 
 _ln() {(
+    debug "Link Path: ${2}"
+    debug "Checking Linked..."
     if [ -L "$2" ];then
+        debug "Link status: true"
+        debug "Link Path: $2"
         info "ReLinking $2"
         unlink "$2"
     fi
