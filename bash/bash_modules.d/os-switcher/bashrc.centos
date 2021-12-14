@@ -17,15 +17,14 @@ if [ -n "$force_color_prompt" ]; then
         color_prompt=
     fi
 fi
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 if [ -d ${HOME}/.bash_modules.d ];then
     for f in $(ls -1 ${HOME}/.bash_modules.d/*.module);do
         source $f
     done
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 #if [ "$color_prompt" = yes ]; then

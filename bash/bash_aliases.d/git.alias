@@ -1,9 +1,13 @@
-alias gia='git add'
-alias gicc='git commit -m'
-alias gicv='git commit'
-alias giup='git push'
-alias gidw='git pull'
-alias gica='git reset'
-alias gisw='git checkout'
-alias ginb='git branch'
-alias gilg='git log --graph'
+alias gi='git'
+
+__git_complete gi git
+
+#alias gia='git add'
+#alias gicc='git commit -m'
+#alias gicv='git commit'
+#alias giup='git push'
+#alias gidw='git pull'
+#alias gica='git reset'
+#alias gisw='git checkout'
+#alias ginb='git branch'
+#alias gilg='git log --graph'
