@@ -6,10 +6,14 @@ bash/bash_modules.d ${HOME}/.bash_modules.d
 bash/bash_completion.d ${HOME}/.bash_completion.d
 
 # nvim
-nvim/init.vim ${HOME}/.config/nvim/init.vim
+nvim ${HOME}/.config/nvim
 
 # vim(vi)
 vim/vimrc ${HOME}/.vimrc
 
 # tmux
 tmux/tmux.conf ${HOME}/.tmux.conf
+
+# git
+git/gitconfig ${HOME}/.gitconfig
+git/gitconfig.d ${HOME}/.gitconfig.d
