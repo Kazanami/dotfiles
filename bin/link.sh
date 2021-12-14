@@ -17,7 +17,7 @@ source ${LIB_BASE}/logger.sh
 debug "DOT_DEBUG is True"
 debug "Loading Library..."
 for lib_data in `ls -1 ${LIB_BASE}/*.sh`; do
-    [[ "$ilb_data" != "${LIB_BASE}/logger.sh" ]] && source ${lib_data}; debug "Loaded Library: ${lib_data}"
+    [[ "$lib_data" != "${LIB_BASE}/logger.sh" ]] && source ${lib_data}; debug "Loaded Library: ${lib_data}"
 done
 
 debug "Getting OS Infomation..."
@@ -36,10 +36,16 @@ for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(unam
     [ ! -r "${linklist}" ] && continue
     _remove_linklist_comment "$linklist" | while read target link; do
  #       echo "${target} ${link}"
-        target=$(eval echo "${dotfiles_root}/${target}")
-        link=$(eval echo "${link}")
-        _mkdir $(dirname ${link})
-        _ln ${target} ${link}
+        if [[ "${target}" == http* ]];then
+          debug "URL Detect"
+          _download ${target} ${link}
+        else
+          debug "File Detect"
+          target=$(eval echo "${dotfiles_root}/${target}")
+          link=$(eval echo "${link}")
+          _mkdir $(dirname ${link})
+          _ln ${target} ${link}
+        fi
     done
 done
 

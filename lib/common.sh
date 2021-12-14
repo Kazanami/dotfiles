@@ -25,6 +25,21 @@ _mkdir() {(
     fi
 )}
 
+_download() {(
+  DEST_PATH=$(eval echo ${2})
+  if [ ! -f "$2" ];then
+      info "File Not found: $DEST_PATH"
+      info "Downloading..."
+      curl -o "${DEST_PATH}" -Lns "$1"
+      if [[ $? != 0 ]];then
+        error "Download error!"
+        exit 10
+      else
+        info "Complited";
+      fi
+  fi
+)}
+
 _remove_linklist_comment() {(
     sed -e 's/\s*#.*//' \
         -e '/^\s*$/d' \
