@@ -7,3 +7,5 @@ set showtabline=2
 set mouse=a
 nnoremap <leader>sv :source $MYVIMRC<CR>
 tab all
+set clipboard&
+set clipboard^=unnamedplus
