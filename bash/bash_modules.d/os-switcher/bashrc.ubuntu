@@ -104,7 +104,6 @@ if [ -d ${HOME}/.bash_modules.d ];then
     done
 fi
 
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi

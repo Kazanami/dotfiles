@@ -17,4 +17,4 @@ tmux/tmux.conf ${HOME}/.tmux.conf
 # git
 git/gitconfig ${HOME}/.gitconfig
 git/gitconfig.d ${HOME}/.gitconfig.d
-https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ${HOME}/.bash_completion.d/git-completion.bash
+https://raw.githubusercontent.com/git/git/v2.25.1/contrib/completion/git-completion.bash ${HOME}/.bash_completion.d/git-completion.bash
