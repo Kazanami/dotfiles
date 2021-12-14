@@ -1,0 +1,10 @@
+[alias]
+	a = add
+	cc = commit -m
+	cv = commit
+	up = push
+	dw = pull
+	ca = restore
+	sw = checkout
+	nb = branch
+	lg = log --graph

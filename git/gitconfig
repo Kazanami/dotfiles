@@ -1,0 +1,7 @@
+[include]
+  # user info
+  path = ~/.gitconfig.d/gitconfig.user
+
+  # git alias
+  path = ~/.gitconfig.d/git_alias
+
