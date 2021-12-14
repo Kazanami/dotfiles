@@ -1,3 +1,9 @@
 export GOROOT=$HOME/.local/go
 export GOPATH=$HOME/.local/gobin
+
+if [[ "$(uname -r)" == *microsoft* ]];then
+  export WIN32YANK="/mnt/c/run/win32yank-x64"
+  export PATH=$PATH:$WIN32YANK
+fi
+
 export PATH=$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.nodebrew/current/bin:$PATH
