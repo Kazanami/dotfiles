@@ -1,6 +1,6 @@
-alias gi='git'
+alias g='git'
 
-__git_complete gi __git_main
+__git_complete g __git_main
 
 #alias gia='git add'
 #alias gicc='git commit -m'
