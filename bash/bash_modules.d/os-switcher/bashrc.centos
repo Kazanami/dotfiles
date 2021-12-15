@@ -28,7 +28,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #if [ "$color_prompt" = yes ]; then
-    PS1='\[$(face_input)\]'" \[${OS}\]:\[$(get_arch)\] \[$(username_host)\] in \[${greenb}\w${end}\]"'\[$(git_info)\]'"\n-> "
+    PS1="\[$(set_title)\]"'\[$(face_input)\]'" \[${OS}\]:\[$(get_arch)\] \[$(username_host)\] in \[${greenb}\w${end}\]"'\[$(git_info)\]'"\n-> "
 #else
 #    PS1='[\u@\h:\w]\$ '
 #fi

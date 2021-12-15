@@ -1,4 +1,8 @@
 
+set_title() {
+  echo -ne "\033]0;${debian_chroot:+($debian_chroot)}\u@\h:\w\007"
+}
+
 function get_arch() {
     echo "${lightblueb}$(uname -m)${end}"
 }
