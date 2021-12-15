@@ -53,6 +53,11 @@ export PROMPT_DIRTRIM=2
 
 COMPOSE_DOCKER_CLI_BUILD=1
 
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
 if [ "$color_prompt" = yes ]; then
     PS1="\[$(remote_local)\] "'\[$(face_input)\]'" \[${OS}\]:\[$(get_arch)\] \[$(username_host)\] in \[${greenb}\w${end}\]"'\[$(git_info)\]'"\n-> "
 else
