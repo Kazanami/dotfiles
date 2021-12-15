@@ -1,4 +1,12 @@
 
+remote_local() {
+  if [[ ! "$SSH_CONNECTION" ]];then
+    echo -ne "${yellowb}(local)${end}"
+  else
+    echo -ne "${redb}(remote)${end}"
+  fi
+}
+
 set_title() {
   echo -ne "\033]0;${debian_chroot:+($debian_chroot)}\u@\h:\w\007"
 }
@@ -39,4 +47,26 @@ function git_info() {
   echo -e "${end} on ${purple}${branch}${dirty}${end}"
 }
 
+
+
 export PROMPT_DIRTRIM=2
+
+COMPOSE_DOCKER_CLI_BUILD=1
+
+if [ "$color_prompt" = yes ]; then
+    PS1="\[$(remote_local)\] "'\[$(face_input)\]'" \[${OS}\]:\[$(get_arch)\] \[$(username_host)\] in \[${greenb}\w${end}\]"'\[$(git_info)\]'"\n-> "
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+case "$TERM" in
+xterm*|rxvt*)
+    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="$(set_title)$PS1"
+    ;;
+*)
+    ;;
+esac
+
+unset color_prompt force_color_prompt
+
