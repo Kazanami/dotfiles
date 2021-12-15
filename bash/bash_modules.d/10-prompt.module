@@ -8,7 +8,7 @@ remote_local() {
 }
 
 set_title() {
-  echo -ne "\033]0;${debian_chroot:+($debian_chroot)}\u@\h:\w\007"
+    echo -ne "\033]0;[${1}] ${debian_chroot:+($debian_chroot)}\u@\h:\w\007"
 }
 
 function get_arch() {
@@ -65,10 +65,12 @@ else
 fi
 
 case "$TERM" in
-xterm*|rxvt*)
+  xterm*|rxvt*)
     #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="$(set_title)$PS1"
+    PS1="$(set_title REAL) $PS1"
     ;;
+  screen*)
+    PS1="$(set_title VTY) $PS1";;
 *)
     ;;
 esac
