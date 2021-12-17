@@ -1,0 +1,62 @@
+[[plugins]]
+repo = 'skanehira/denops-docker.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_add = '''
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
+call ddc#custom#patch_global('sources', [
+\  'file'
+\  ])
+call ddc#custom#patch_global('sourceOptions', {
+\  'file': {
+\    'mark': 'file',
+\    'isVolatile': v:true, 
+\    'forceCompletionPattern': '\S/\S*'
+\  }})
+call ddc#enable()
+'''
+
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+autocmd VimEnter * ++nested Fern . -reveal=% -drawer -stay
+let g:fern#default_hidden=1
+'''
+
+[[plugins]]
+repo = 'antoinemadec/FixCursorHold.nvim'
+hook_add = '''
+let g:cursorhold_updatetime = 100
+'''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'skanehira/docker-compose.vim'
+
+[[plugins]]
+repo ='vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 't9md/vim-choosewin'
+hook_add = '''
+  nmap - <Plug>(choosewin)
+'''
+
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+
