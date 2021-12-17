@@ -11,3 +11,5 @@ xnoremap d "_d
 tab all
 set clipboard&
 set clipboard^=unnamedplus
+
+source ~/.config/nvim/modules/dein_setup.vim
