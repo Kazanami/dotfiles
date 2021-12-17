@@ -7,3 +7,6 @@ if [[ "$(uname -r)" == *microsoft* ]];then
 fi
 
 export PATH=$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.nodebrew/current/bin:$PATH
+
+# cheat module
+export CHEAT_CONFIG_PATH="~/.config/cheat/conf.yml"
