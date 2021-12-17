@@ -5,7 +5,6 @@ function! s:init_fern() abort
   echo "This function is called ON a fern buffer WHEN initialized"
 
   " Open node with 'o'
-  nmap <buffer> o <Plug>(fern-action-open)
   nmap <buffer> <C-j> <C-w>j
   nmap <buffer> <C-k> <C-w>k
   nmap <buffer> <C-l> <C-w>l
@@ -14,11 +13,7 @@ function! s:init_fern() abort
 endfunction
 
 augroup fern-custom
-  autocmd! *
+"  autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
 
-nnoremap <buffer> <C-j> <C-w>j
-nnoremap <buffer> <C-k> <C-w>k
-nnoremap <buffer> <C-l> <C-w>l
-nnoremap <buffer> <C-h> <C-w>h
