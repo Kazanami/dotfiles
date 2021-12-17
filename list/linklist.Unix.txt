@@ -20,3 +20,6 @@ git/gitconfig ${HOME}/.gitconfig
 git/gitconfig.d ${HOME}/.gitconfig.d
 https://raw.githubusercontent.com/git/git/v2.25.1/contrib/completion/git-completion.bash ${HOME}/.bash_completion.d/git-completion.bash
 https://cheat.sh/:bash_completion ${HOME}/.bash_completion.d/cheat.bash
+
+# cheat command
+
