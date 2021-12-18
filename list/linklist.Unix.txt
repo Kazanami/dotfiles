@@ -22,4 +22,4 @@ https://raw.githubusercontent.com/git/git/v2.25.1/contrib/completion/git-complet
 https://cheat.sh/:bash_completion ${HOME}/.bash_completion.d/cheat.bash
 
 # cheat command
-
+cheat ${HOME}/.config/cheat
