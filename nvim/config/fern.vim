@@ -9,6 +9,7 @@ function! s:init_fern() abort
   nmap <buffer> <C-k> <C-w>k
   nmap <buffer> <C-l> <C-w>l
   nmap <buffer> <C-h> <C-w>h
+  nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
   " Add any code to customize fern buffer
 endfunction
 

@@ -54,3 +54,6 @@ repo = 'christoomey/vim-tmux-navigator'
 
 [[plugins]]
 repo = 'mhinz/vim-startify'
+hook_add = '''
+source ~/.config/nvim/config/vim-startify.vim
+'''

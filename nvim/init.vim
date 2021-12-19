@@ -10,6 +10,13 @@ nnoremap d "_d
 xnoremap d "_d
 tab all
 set clipboard&
-set clipboard^=unnamedplus
+if has('win32') || has('win64')
+  set clipboard^=unnamedplus
+endif
+if has('unix')
+  set clipboard=unnamedplus
+endif
+
+set undodir='~/.vim/undodir'
 
 source ~/.config/nvim/modules/dein_setup.vim
