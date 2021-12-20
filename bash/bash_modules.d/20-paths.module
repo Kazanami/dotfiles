@@ -1,6 +1,6 @@
 export GOROOT=$HOME/.local/go
 export GOPATH=$HOME/.local/gobin
-export DENO_INSTALL="/home/atolycs/.deno"
+export DENO_INSTALL="${HOME}/.deno"
 if [[ "$(uname -r)" == *microsoft* ]];then
   export WIN32YANK="/mnt/c/run/win32yank-x64"
   export PATH=$PATH:$WIN32YANK
