@@ -4,3 +4,6 @@
 [submodule "cheat/personal"]
 	path = cheat/personal
 	url = https://github.com/Kazanami/mycheat-list.git
+[submodule "libexec/dotfiles-manager"]
+	path = libexec/dotfiles-manager
+	url = https://github.com/Kazanami/dotfiles-manager.git

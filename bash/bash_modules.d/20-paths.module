@@ -6,7 +6,9 @@ if [[ "$(uname -r)" == *microsoft* ]];then
   export PATH=$PATH:$WIN32YANK
 fi
 
-export PATH=$DENO_INSTALL/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.nodebrew/current/bin:$PATH
+export ORIGINAL_PATH="${DENO_INSTALL}/bin:${GOROOT}/bin:${GOPATH}/bin"
+
+export PATH=${ORIGINAL_PATH}:$HOME/.local/bin:$HOME/.nodebrew/current/bin:$PATH
 
 # cheat module
 export CHEAT_CONFIG_PATH="~/.config/cheat/conf.yml"
