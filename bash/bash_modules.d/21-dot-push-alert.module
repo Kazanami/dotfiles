@@ -2,8 +2,8 @@
 
 # Thank you @korosuke613
 
-if test -n "$(git -C \"${DOT_MAIN}\" status --porcelain)" ||
-   ! git -C \"${DOT_MAIN}\" diff --exit-code --stat --cached origin/main > /dev/null ; then
+if test -n "$(git -C ${DOT_MAIN} status --porcelain)" ||
+   ! git -C ${DOT_MAIN} diff --exit-code --stat --cached origin/main > /dev/null ; then
   echo -e "\e[36m=== DOTFILES IS DIRTY ===\e[m"
   echo -e "\e[33mThe dotfiles have been changed.\e[m"
   echo -e "\e[33mPlease update them with the following command.\e[m"
