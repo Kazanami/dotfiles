@@ -3,9 +3,10 @@ set tabstop=2
 set shiftwidth=2
 set cursorline
 set number
+set undodir=${HOME}/.vim/undodir
+set undofile
 set showtabline=2
 set mouse=a
-set undofile
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap d "_d
 xnoremap d "_d
@@ -17,7 +18,5 @@ endif
 if has('unix')
   set clipboard=unnamedplus
 endif
-
-set undodir='~/.vim/undodir'
 
 source ~/.config/nvim/modules/dein_setup.vim

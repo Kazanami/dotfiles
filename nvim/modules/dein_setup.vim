@@ -17,12 +17,13 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let s:rc_dir = expand('~/.config/nvim/plugins')
-  if !isdirectory(s:rc_dir)
-    call mkdir(s:rc_dir, 'p')
-  endif
-  let s:toml = s:rc_dir . '/dein.toml'
-  call dein#load_toml(s:toml, {'lazy': 0})
+"  let s:rc_dir = expand('~/.config/nvim/plugins')
+  let s:toml_dir = expand('~/.config/nvim/toml')
+  "let s:toml = s:rc_dir . '/dein.toml'
+  let s:dein_toml_list = split(glob(s:toml_dir.'/**/*.toml'), '\n')
+  for s:i in s:dein_toml_list
+    call dein#load_toml(s:i)
+  endfor
   call dein#end()
   call dein#save_state()
 endif
