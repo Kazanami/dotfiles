@@ -20,3 +20,13 @@ $ docker run -it --rm example/dotfiles_local:latest
 
 $ bash ${HOME}/launch.sh
 ```
+
+
+## Require Program
+* git
+* curl
+
+## Optional Install
+* nvim
+* docker
+* cheat
