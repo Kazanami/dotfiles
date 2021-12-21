@@ -5,6 +5,7 @@ set cursorline
 set number
 set showtabline=2
 set mouse=a
+set undofile
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap d "_d
 xnoremap d "_d
