@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'skanehira/docker-compose.vim'
+hook_add = '''
+  if !executable('docker')
+    echomsg 'Sorry, docker-compose not found. disable plugin'
+    dein#disable('docker')
+  endif
+'''
+
+[[plugins]]
+repo = 'skanehira/denops-docker.vim'
+hook_add = '''
+  if !executable('docker')
+    echomsg 'Sorry, docker-compose not found. disable plugin'
+    dein#disable('docker')
+  endif
+'''
+
+

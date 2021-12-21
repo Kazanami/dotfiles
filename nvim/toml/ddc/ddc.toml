@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_add = '''
+source ~/.config/nvim/config/ddc.vim
+'''
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+
+
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+
+

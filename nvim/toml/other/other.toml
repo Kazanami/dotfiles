@@ -1,0 +1,22 @@
+[[plugins]]
+repo = 't9md/vim-choosewin'
+
+[[plugins]]
+repo = 'christoomey/vim-tmux-navigator'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+source ~/.config/nvim/config/vim-startify.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/config/lightline.vim
+'''
+
+

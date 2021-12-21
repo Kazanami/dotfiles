@@ -1,0 +1,12 @@
+[[plugins]]
+repo ='vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'antoinemadec/FixCursorHold.nvim'
+hook_add = '''
+let g:cursorhold_updatetime = 100
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
