@@ -1,6 +1,6 @@
-if [ -d ${HOME}/.keychain ];then
-  source ${HOME}/.keychain/${HOSTNAME}-sh
-fi
+#if [ -d ${HOME}/.keychain ];then
+#  source ${HOME}/.keychain/${HOSTNAME}-sh
+#fi
 
 if [ -z "${SSH_AGENT_PID}" ]; then
     eval $(ssh-agent) 1>/dev/null
