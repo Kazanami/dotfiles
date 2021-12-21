@@ -31,23 +31,28 @@ echo "${dot_ascii}"
 #echo "Welcome to Kazanami's dotfiles installer"
 
 # Main
-for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(uname).txt"; do
-    debug "Loading Link list: ${linklist}"
-    [ ! -r "${linklist}" ] && continue
-    _remove_linklist_comment "$linklist" | while read target link; do
- #       echo "${target} ${link}"
-        if [[ "${target}" == http* ]];then
-          debug "URL Detect"
-          _download ${target} ${link}
-        else
-          debug "File Detect"
-          target=$(eval echo "${dotfiles_root}/${target}")
-          link=$(eval echo "${link}")
-          _mkdir $(dirname ${link})
-          _ln ${target} ${link}
-        fi
-    done
-done
+main() {
+  _get_submodule
+  for linklist in "${LINK_LISTS}/linklist.Unix.txt" "${LINK_LISTS}/linklist.$(uname).txt"; do
+      debug "Loading Link list: ${linklist}"
+      [ ! -r "${linklist}" ] && continue
+      _remove_linklist_comment "$linklist" | while read target link; do
+   #       echo "${target} ${link}"
+          if [[ "${target}" == http* ]];then
+            debug "URL Detect"
+            _download ${target} ${link}
+          else
+            debug "File Detect"
+            target=$(eval echo "${dotfiles_root}/${target}")
+            link=$(eval echo "${link}")
+            _mkdir $(dirname ${link})
+            _ln ${target} ${link}
+          fi
+      done
+  done
 
-info "Please reload .bashrc"
-info "$ source ~/.bashrc"
+  info "Please reload .bashrc"
+  info "$ source ~/.bashrc"
+}
+
+main

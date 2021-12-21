@@ -1,5 +1,12 @@
 #!/bin/bash
 
+_get_submodule(){(
+  info "Getting Dotfiles submodule..."
+  cd ${dotfiles_root}
+  git submodule update --init
+)}
+
+
 _ln() {(
     debug "Link Path: ${2}"
     debug "Checking Linked..."
