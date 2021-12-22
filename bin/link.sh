@@ -30,6 +30,10 @@ echo "Welcome to Kazanami's"
 echo "${dot_ascii}"
 #echo "Welcome to Kazanami's dotfiles installer"
 
+dot_main_path(){
+  echo "export DOT_MAIN=\"${dotfiles_root}\"" | tee -a "${dotfiles_root}/bash/bash_modules.d/20-paths.local.module"
+}
+
 # Main
 main() {
   _get_submodule
@@ -50,7 +54,7 @@ main() {
           fi
       done
   done
-
+  dot_main_path
   info "Please reload .bashrc"
   info "$ source ~/.bashrc"
 }
