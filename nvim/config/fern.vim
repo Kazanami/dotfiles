@@ -1,14 +1,13 @@
 autocmd VimEnter * ++nested Fern ~ -reveal=%:p -drawer -stay
 let g:fern#default_hidden=1
 let g:fern#disable_default_mappings=0
-
 function! s:init_fern() abort
   echo "This function is called ON a fern buffer WHEN initialized"
 
   nmap <buffer><expr>
-      \ <Plug>(fern-my-expand-or-collapse)
+      \ <Plug>(fern-my-expand-open-or-collapse)
       \ fern#smart#leaf(
-      \   "\<Plug>(fern-action-collapse)",
+      \   "\<Plug>(fern-action-open:split)",
       \   "\<Plug>(fern-action-expand)",
       \   "\<Plug>(fern-action-collapse)",
       \ )
@@ -19,7 +18,9 @@ function! s:init_fern() abort
   nmap <buffer> <C-l> <C-w>l
   nmap <buffer> <C-h> <C-w>h
 "  nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
-  nmap <buffer> <CR> <Plug>(fern-my-expand-or-collapse)
+  nmap <buffer> <CR> <Plug>(fern-my-expand-open-or-collapse)
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-expand-open-or-collapse)
+  " Add any code to customize fern buffer
   " Add any code to customize fern buffer
 endfunction
 
