@@ -21,7 +21,8 @@ jobs:
             DOT_DEBUG="true" bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
           env:
             TZ: 'Asia/Tokyo'
-       - name: Check linker
+
+        - name: Check linker
           run: |
             cd ${HOME}
             bash dotfiles/bin/check.sh
@@ -40,12 +41,14 @@ jobs:
           run: |
             cd ${HOME}
             curl -o launch.sh https://kazanami.github.io/dotfiles/launch.sh
+
         - name: Run Launch script
           run: |
             cd ${HOME}
             DOT_DEBUG="true" bash launch.sh
           env:
             TZ: 'Asia/Tokyo'
+
        - name: Check linker
           run: |
             cd ${HOME}
@@ -67,6 +70,7 @@ jobs:
           DOT_DEBUG="true" bash ${GITHUB_WORKSPACE}/bin/link.sh
         env:
           TZ: 'Asia/Tokyo'
+
       - name: Linked Checker
         run: |
           bash ${GITHUB_WORKSPACE}/bin/check.sh
