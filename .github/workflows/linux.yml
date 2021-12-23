@@ -16,7 +16,9 @@ jobs:
             sudo apt-get install -y curl tar gzip xzip
         
         - name: Run Online Launch script
-          run: |
+          env: |
+            TZ="Asia/Tokyo"
+         run: |
             cd ${HOME}
             DOT_DEBUG="true" bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
         - name: Check linker
@@ -39,6 +41,8 @@ jobs:
             cd ${HOME}
             curl -o launch.sh https://kazanami.github.io/dotfiles/launch.sh
         - name: Run Launch script
+          env: |
+            TZ="Asia/Tokyo"
           run: |
             cd ${HOME}
             DOT_DEBUG="true" bash launch.sh
@@ -59,6 +63,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run link.sh
+        env: |
+          TZ="Asia/Tokyo"
         run: |
           DOT_DEBUG="true" bash ${GITHUB_WORKSPACE}/bin/link.sh
       
