@@ -49,7 +49,7 @@ jobs:
           env:
             TZ: 'Asia/Tokyo'
 
-       - name: Check linker
+        - name: Check linker
           run: |
             cd ${HOME}
             bash dotfiles/bin/check.sh
