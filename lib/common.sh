@@ -34,7 +34,7 @@ _mkdir() {(
 
 _download() {(
   DEST_PATH=$(eval echo ${2})
-  if [ ! -f "$2" ];then
+  if [ ! -f "${DEST_PATH}" ];then
       info "File Not found: $DEST_PATH"
       info "Downloading..."
       curl -o "${DEST_PATH}" -Lns "$1"
@@ -44,6 +44,8 @@ _download() {(
       else
         info "Complited";
       fi
+  else
+      info "File detected. Skiping,"
   fi
 )}
 
