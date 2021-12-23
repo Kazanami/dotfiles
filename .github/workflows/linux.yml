@@ -18,7 +18,7 @@ jobs:
         - name: Run Online Launch script
           env: |
             TZ="Asia/Tokyo"
-         run: |
+          run: |
             cd ${HOME}
             DOT_DEBUG="true" bash -c "$(curl -fsSL https://kazanami.github.io/dotfiles/launch.sh)"
         - name: Check linker
