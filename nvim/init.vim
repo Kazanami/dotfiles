@@ -21,3 +21,5 @@ if has('unix')
 endif
 
 source ~/.config/nvim/modules/dein_setup.vim
+source ~/.config/nvim/config/common-config.vim
+

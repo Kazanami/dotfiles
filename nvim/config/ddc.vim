@@ -8,20 +8,21 @@ call ddc#custom#patch_global('sourceOptions', {
 \ '_': {
 \   'matchers': ['matcher_head'],
 "\   'sorters': ['sorter_rank'],
-"\   'converters': ['converter_remove_overlap'],
+\   'converters': ['converter_remove_overlap'],
 \ },
+\ 'around': {'mark': 'Around'},
 \  'file': {
 \    'mark': 'file',
 \    'isVolatile': v:true, 
 \    'forceCompletionPattern': '\S/\S*'
 \  }})
 
-	" <TAB>: completion.
-	inoremap <silent><expr> <TAB>
-	\ ddc#map#pum_visible() ? '<C-n>' :
-	\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-	\ '<TAB>' : ddc#map#manual_complete()
-	" <S-TAB>: completion back.
-	inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
 
 call ddc#enable()
+
+" <TAB>: completion.
+inoremap <TAB> <Cmd>call pum#map#insert_relative(+1)<CR>
+" <S-TAB>: completion back.
+inoremap <S-TAB> <Cmd>call pum#map#insert_relative(-1)<CR>
+" <CR>: confirm
+"inoremap <expr><CR> pum#visible() ? "<Plug>(pum#map#confirm())" 
