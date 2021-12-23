@@ -21,8 +21,18 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#enable()
 
 " <TAB>: completion.
-inoremap <TAB> <Cmd>call pum#map#insert_relative(+1)<CR>
+inoremap <Tab> <Cmd>call pum#map#insert_relative(+1)<CR>
 " <S-TAB>: completion back.
 inoremap <S-TAB> <Cmd>call pum#map#insert_relative(-1)<CR>
 " <CR>: confirm
-"inoremap <expr><CR> pum#visible() ? "<Plug>(pum#map#confirm())" 
+inoremap <silent><expr><CR> <SID>smart_carriage_return()
+
+
+function s:smart_carriage_return()
+   if !pumvisible() || get(complete_info(), 'selected', -1) < 0
+      return "\<CR>"
+   else
+      return "\<C-y>"
+   endif
+endfunction
+
