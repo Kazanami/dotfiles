@@ -10,7 +10,7 @@ bash/bash_completion.d ${HOME}/.bash_completion.d
 nvim ${HOME}/.config/nvim
 
 # vim(vi)
-vim/vimrc ${HOME}/.vimrc
+#vim/vimrc ${HOME}/.vimrc
 
 # tmux
 tmux/tmux.conf ${HOME}/.tmux.conf

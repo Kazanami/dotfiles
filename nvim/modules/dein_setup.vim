@@ -1,3 +1,7 @@
+if &compatible
+  set nocompatible " Be iMproved
+endif
+
 " dein.vim settings{{{
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('~/.config'): $XDG_CONFIG_HOME
@@ -35,3 +39,5 @@ if dein#check_install()
 endif
 " }}
 
+filetype plugin indent on
+syntax enable

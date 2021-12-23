@@ -1,3 +1,5 @@
+set paste
+"set filetype=ignored
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -19,7 +21,4 @@ endif
 if has('unix')
   set clipboard=unnamedplus
 endif
-
 source ~/.config/nvim/modules/dein_setup.vim
-source ~/.config/nvim/config/common-config.vim
-

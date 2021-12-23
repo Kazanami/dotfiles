@@ -1,0 +1,4 @@
+[ftplugin]
+_ = '''
+  setlocal formatoptions-=ro
+'''
