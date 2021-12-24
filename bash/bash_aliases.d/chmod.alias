@@ -1,6 +1,0 @@
-alias 644='chmod 644'
-alias 755='chmod 755'
-alias rwx='chmod 700'
-alias r-x='chmod 755'
-alias r--='chmod 644'
-

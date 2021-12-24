@@ -1,7 +1,0 @@
-# bootstraper
-
-if [ -d ${HOME}/.bash_modules.d ];then
-    source ${HOME}/.bash_modules.d/00-os-detect.module
-fi
-
-source ${HOME}/.bash_modules.d/os-switcher/bashrc.${ID}
