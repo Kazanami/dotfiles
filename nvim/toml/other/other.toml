@@ -22,4 +22,8 @@ source ~/.config/nvim/config/lightline.vim
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
 
-
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+source ~/.config/nvim/config/vim-indent-guides.vim
+'''
