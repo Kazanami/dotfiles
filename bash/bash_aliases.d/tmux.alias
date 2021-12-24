@@ -1,4 +1,10 @@
 
+tmux_close(){
+  case $1 in
+    all) tmux kill-server;;
+    *) [ $# -gt 1 ];tmux kill-session -t $@;;
+  esac 
+}
 tmux_open(){
   local tmux_profile="${HOME}/.tmux.conf.d"
   local tmux_profile_name="$1"
@@ -10,6 +16,7 @@ tmux_open(){
   fi
 }
 
-alias txx='tmux kill-server'
-alias bye='tmux kill-session'
+#alias txx='tmux kill-server'
+#alias bye='tmux kill-session'
+alias bye='tmux_close'
 alias tma='tmux_open'
