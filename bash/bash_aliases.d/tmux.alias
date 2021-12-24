@@ -4,7 +4,7 @@ tmux_open(){
   local gotcha=$(eval echo "${tmux_profile}/${tmux_profile_name}")
 
   if [ -f "${gotcha}.conf" ];then
-    command tmux new-session -A -s ${tmux_profile_name}\;source-file ${gotcha}.conf
+    command tmux new-session -A -s ${tmux_profile_name} \; source-file ${gotcha}.conf
   else
     command echo "Not Found Profile: $(basename ${gotcha})"
   fi
