@@ -13,7 +13,8 @@ nvim ${HOME}/.config/nvim
 #vim/vimrc ${HOME}/.vimrc
 
 # tmux
-tmux/tmux.conf ${HOME}/.tmux.conf
+#tmux/tmux.conf ${HOME}/.tmux.conf
+tmux ${HOME}/.tmux.conf.d
 
 # git
 git/gitconfig ${HOME}/.gitconfig

@@ -1,1 +1,14 @@
+tmux_open(){
+  local tmux_profile="${HOME}/.tmux.conf.d"
+  local tmux_profile_name="$1"
+  local gotcha=$(eval echo "${tmux_profile}/${tmux_profile_name}")
+
+  if [ -f "${gotcha}.conf" ];then
+    command tmux new-session -A -s ${tmux_profile_name}\;source-file ${gotcha}.conf
+  else
+    command echo "Not Found Profile: $(basename ${gotcha})"
+  fi
+}
+
 alias bye='tmux kill-session'
+#alias tma='tmux_open'

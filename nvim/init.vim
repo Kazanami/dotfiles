@@ -1,4 +1,4 @@
-set paste
+"set paste
 "set filetype=ignored
 set expandtab
 set tabstop=2
