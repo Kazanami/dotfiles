@@ -1,7 +1,11 @@
 
 tmux_close(){
   case $1 in
-    all) tmux kill-server;;
+    --all)
+        if [ $@ == "all" ];then
+          tmux kill-server;
+        fi
+        shift;;
     *) [ $# -gt 1 ];tmux kill-session -t $@;;
   esac 
 }
