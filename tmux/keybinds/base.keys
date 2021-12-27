@@ -1,0 +1,4 @@
+source ~/dotfiles/vim-tmux-keybind.conf
+unbind t
+
+bind r source-file ~/.tmux.conf \; display-message "Reloaded Config!"
