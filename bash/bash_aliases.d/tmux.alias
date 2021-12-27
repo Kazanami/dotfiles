@@ -1,12 +1,10 @@
 
 tmux_close(){
   case $1 in
-    --all)
-        if [ $@ == "all" ];then
-          tmux kill-server;
-        fi
-        shift;;
-    *) [ $# -gt 1 ];tmux kill-session -t $@;;
+    all)
+      tmux kill-server;;
+    *)
+      [ $# -gt 1 ];tmux kill-session -t $@;;
   esac 
 }
 tmux_open(){
@@ -14,7 +12,8 @@ tmux_open(){
   local tmux_profile_name="$1"
   local gotcha=$(eval echo "${tmux_profile}/${tmux_profile_name}")
   if [ -f "${gotcha}.conf" ];then
-    tmux attach-session -t ${tmux_profile_name} || tmux new-session -s ${tmux_profile_name}\; source-file ${gotcha}.conf
+#    tmux -2 attach-session -t ${tmux_profile_name} || tmux -2 new-session -s ${tmux_profile_name}\; source-file ${gotcha}.conf
+    tmux -2 attach-session -t ${tmux_profile_name} || tmux -2 new-session \; source-file ${gotcha}.conf
   else
     command echo "Not Found Profile: $(basename ${gotcha})"
   fi
@@ -24,3 +23,4 @@ tmux_open(){
 #alias bye='tmux kill-session'
 alias bye='tmux_close'
 alias tma='tmux_open'
+alias tml='tmux list-sessions'
