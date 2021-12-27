@@ -2,7 +2,11 @@
 tmux_close(){
   case $1 in
     all)
-      tmux kill-server;;
+      for ses in $(tmux list-sessions | cut -d ":" -f 1);do
+          echo "Killing ${ses}"
+          tmux kill-session -t $ses
+      done;
+      tmux new-session -d;;
     *)
       [ $# -gt 1 ];tmux kill-session -t $@;;
   esac 
