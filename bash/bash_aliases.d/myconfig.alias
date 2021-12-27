@@ -1,3 +1,3 @@
 alias home="cd ${HOME};pwd"
-alias cdd="cd ${HOME}/dotfiles"
+alias cdd="cd ${HOME}/dotfiles;pwd"
 alias reload="source ${HOME}/.$(eval basename ${SHELL})rc && echo \"Reloaded ~/.$(eval basename ${SHELL})rc \""
