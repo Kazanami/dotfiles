@@ -3,4 +3,5 @@ alias 755='chmod 755'
 alias rwx='chmod 700'
 alias r-x='chmod 755'
 alias r--='chmod 644'
-
+alias dr--='chmod -R 644'
+alias drwx='chmod -R 755'
