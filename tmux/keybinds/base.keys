@@ -2,3 +2,4 @@ source ~/dotfiles/vim-tmux-keybind.conf
 unbind t
 
 bind r source-file ~/.tmux.conf \; display-message "Reloaded Config!"
+bind g kill-window \; display-message "closed window"
