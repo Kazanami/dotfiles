@@ -1,0 +1,6 @@
+_tmux_profile(){
+  COMPREPLY=( $(compgen -W "$(cd ~/.tmux.conf.d/profile;ls *.conf | sed -e 's/\.conf//g')" ${COMP_WORDS[COMP_CWORD]}) )
+}
+
+complete -F _tmux_profile tma
+
