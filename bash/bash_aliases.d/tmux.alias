@@ -13,7 +13,11 @@ tmux_close(){
 }
 tmux_open(){
   local tmux_profile="${HOME}/.tmux.conf.d/profile"
-  local tmux_profile_name="$1"
+  if [ $# -gt 0 ];then
+    local tmux_profile_name="$1"
+  else
+    local tmux_profile_name=$(readlink ${tmux_profile}/default.conf | cut -d "." -f 1)
+  fi
   local gotcha=$(eval echo "${tmux_profile}/${tmux_profile_name}")
   if [ -f "${gotcha}.conf" ];then
 #    tmux -2 attach-session -t ${tmux_profile_name} || tmux -2 new-session -s ${tmux_profile_name}\; source-file ${gotcha}.conf
