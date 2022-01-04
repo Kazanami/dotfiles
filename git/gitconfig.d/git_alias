@@ -1,6 +1,7 @@
 [alias]
 	a = add
 	cc = commit -m
+  cim = commit --allow-empty -m 'Initial Commit'
 	cv = commit
 	up = push
 	dw = pull
