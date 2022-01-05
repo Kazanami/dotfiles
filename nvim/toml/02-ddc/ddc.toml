@@ -1,24 +1,26 @@
-
-if = '''executable('deno')'''
-
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+if = '''executable('deno')'''
 hook_add = '''
 source ~/.config/nvim/config/ddc.vim
 '''
+
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'
+if = '''executable('deno')'''
 
 [[plugins]]
 repo = 'Shougo/ddc-around'
+if = '''executable('deno')'''
 
 [[plugins]]
 repo = 'Shougo/ddc-converter_remove_overlap'
+if = '''executable('deno')'''
 
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
+if = '''executable('deno')'''
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
-
 
