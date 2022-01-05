@@ -1,3 +1,6 @@
+
+if = '''executable('deno')'''
+
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 hook_add = '''
