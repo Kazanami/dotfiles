@@ -33,11 +33,13 @@ if dein#load_state(s:dein_dir)
 endif
 "}}
 
+filetype plugin indent on
+syntax enable
+
 " plugin install {{
-if dein#check_install()
+if has('vim_starting') && dein#check_install()
   call dein#install()
+  call dein#recache_runtimepath()
 endif
 " }}
 
-filetype plugin indent on
-syntax enable
