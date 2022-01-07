@@ -31,7 +31,9 @@ echo "${dot_ascii}"
 #echo "Welcome to Kazanami's dotfiles installer"
 
 dot_main_path(){
-  echo "export DOT_MAIN=\"${dotfiles_root}\"" | tee -a "${dotfiles_root}/bash/bash_modules.d/20-paths.local.module"
+  if [[ ! -f "${dotfiles_root}/bash/bash_modules.d/20-paths.local.module" ]];then
+    echo "export DOT_MAIN=\"${dotfiles_root}\"" | tee -a "${dotfiles_root}/bash/bash_modules.d/20-paths.local.module"
+  fi
 }
 
 # Main
