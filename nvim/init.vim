@@ -16,5 +16,4 @@ endif
 if has('unix')
   set clipboard=unnamedplus
 endif
-"tester
 source ~/.config/nvim/modules/dein_setup.vim
