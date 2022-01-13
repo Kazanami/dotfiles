@@ -28,7 +28,7 @@ if dein#load_state(s:dein_dir)
   for s:i in s:dein_toml_list
     call dein#load_toml(s:i)
   endfor
-  let g:dein#auto_recache = '9'
+  let g:dein#auto_recache = '1'
   call dein#end()
   call dein#save_state()
 endif
