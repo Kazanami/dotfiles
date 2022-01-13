@@ -1,8 +1,3 @@
-"set paste
-"set filetype=ignored
-set expandtab
-set tabstop=2
-set shiftwidth=2
 set cursorline
 set cursorcolumn
 set number
@@ -21,4 +16,5 @@ endif
 if has('unix')
   set clipboard=unnamedplus
 endif
+"tester
 source ~/.config/nvim/modules/dein_setup.vim
