@@ -1,3 +1,5 @@
+[include]
+  path = ~/.gitconfig.d/gitconfig.global
 
 [include]
   path = ~/.gitconfig.d/gitconfig.user
@@ -7,5 +9,4 @@
 [includeIf "gitdir:~/git_projects/work/"]
   # user info
   path = ~/.gitconfig.d/gitconfig.local.compay
-
 
