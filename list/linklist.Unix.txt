@@ -26,4 +26,4 @@ cheat ${HOME}/.config/cheat
 https://raw.githubusercontent.com/cheat/cheat/master/scripts/cheat.bash ${HOME}/.bash_completion.d/cheat.bash
 
 # editorconfig
-editoconfig ${HOME}/.editorconfig
+editorconfig ${HOME}/.editorconfig
