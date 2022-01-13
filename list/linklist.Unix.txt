@@ -25,3 +25,5 @@ https://raw.githubusercontent.com/git/git/v2.25.1/contrib/completion/git-complet
 cheat ${HOME}/.config/cheat
 https://raw.githubusercontent.com/cheat/cheat/master/scripts/cheat.bash ${HOME}/.bash_completion.d/cheat.bash
 
+# editorconfig
+editoconfig ${HOME}/.editorconfig
