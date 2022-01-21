@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
 repo = 't9md/vim-choosewin'
 
 [[plugins]]

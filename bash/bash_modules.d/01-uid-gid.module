@@ -1,0 +1,2 @@
+export dUID="$(id -u $USER)"
+export dGID="$(id -g $USER)"
