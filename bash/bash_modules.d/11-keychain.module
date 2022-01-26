@@ -2,6 +2,6 @@
 #  source ${HOME}/.keychain/${HOSTNAME}-sh
 #fi
 
-if [ -z "${SSH_AGENT_PID}" ]; then
+if [ $(command -v ssh-agent) ] && [ -z "${SSH_AGENT_PID}" ]; then
     eval $(ssh-agent) 1>/dev/null
 fi
