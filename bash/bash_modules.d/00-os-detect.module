@@ -24,6 +24,7 @@ elif [ -f /etc/redhat-release ]; then
     ...
 else
     # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    ID=$(uname -o | sed 's/.\+/\L\0/')
     OS=$(uname -s)
     VER=$(uname -r)
 fi
