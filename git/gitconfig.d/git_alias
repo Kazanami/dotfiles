@@ -9,3 +9,4 @@
 	sw = checkout
 	nb = branch
 	lg = log --graph
+  me = !git config --get-regexp user

@@ -1,10 +1,11 @@
 [include]
   path = ~/.gitconfig.d/gitconfig.global
+  # git alias
+  path = ~/.gitconfig.d/git_alias
+
 
 [include]
   path = ~/.gitconfig.d/gitconfig.user
-  # git alias
-  path = ~/.gitconfig.d/git_alias
 
 [includeIf "gitdir:~/git_projects/work/"]
   # user info
