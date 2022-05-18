@@ -4,4 +4,10 @@ if [ -d ${HOME}/.bash_modules.d ];then
     source ${HOME}/.bash_modules.d/00-os-detect.module
 fi
 
-source ${HOME}/.bash_modules.d/os-switcher/bashrc.${ID}
+if [ -f "$(readlink -f ${HOME}/.bash_modules.d/os-switcher/bashrc.${ID})" ];then
+  source ${HOME}/.bash_modules.d/os-switcher/bashrc.${ID}
+else
+  echo "Not Found OS ID: ${ID}"
+  echo "Loading Default common bashrc"
+  source ${HOME}/.bash_modules.d/os-switcher/bashrc.common
+fi
